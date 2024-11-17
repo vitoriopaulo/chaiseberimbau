@@ -1,0 +1,108 @@
+body {
+    background-color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav li {
+    margin: 0 10px; 
+}
+
+nav li a {
+    color: #ffffff;          
+    text-decoration: none;   
+    cursor: pointer;
+    display: block;
+    padding: 10px 15px;
+    transition: transform 0.3s ease;
+}
+
+nav li:hover a {
+    transform: scale(1.1);
+}
+
+header {
+    color: orangered;
+}
+
+p {
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.main-section {
+    padding: 20px; 
+    background-color: black;
+}
+
+label {
+    color: #ffffff; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+input[type="text"],
+input[type="email"] {
+    border: none; 
+    border-bottom: 2px solid #ffffff; 
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+#submit {
+    background-color: orangered;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    width: 100%; 
+    font-size: 16px;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#submit:hover {
+    transform: scale(1.01);
+}
+
+footer {
+    font-family: 'Raleway', sans-serif; 
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+/* Media query for responsive design */
+@media (max-width: 600px) {
+   nav ul {
+       flex-direction: column;
+   }
+
+   nav li {
+       margin-bottom: 10px; 
+   }
+}

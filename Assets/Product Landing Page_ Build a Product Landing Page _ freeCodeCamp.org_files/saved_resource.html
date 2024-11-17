@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="">--><base href=".">
+  <style class="fcc-hide-header">
+    head *, title, meta, link, script {
+      display: none !important;
+    }
+  </style>
+  <script>
+    window.__frameId = 'fcc-main-frame';
+    window.onerror = function(msg) {
+      const string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
+      console.log(msg);
+      return true;
+    };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        e.preventDefault();
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-alert', { externalLink: element.href })
+        )
+      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\/\//)) {
+          e.preventDefault();
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      e.preventDefault();
+      if (action && action.match(/https?:\/\//)) {
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
+        )
+      }
+    }, false);
+  </script>
+<meta name="viewport" content="width=width-device, initial-scale 1.0"><link href="./css2" rel="stylesheet"><link rel="stylesheet" href="./all.min.css"><link rel="stylesheet" <="" head="" data-href="styles.css"><style class="fcc-injected-styles">body {
+background-color: black;
+font-family: raleway, sans-serif;
+}
+
+nav li {
+    margin: 10px 0; /* Adds vertical space between li elements */
+}
+
+nav li a {
+    color: #ffffff;          
+    text-decoration: none;   
+    cursor: default;        
+    display: block;
+    padding: 10px 15px;
+    transition: transform 0.3s ease;
+}
+
+nav li:hover a {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    font-family: 'Raleway', serif;
+}
+
+header {
+  color: orangered;
+}
+
+p {
+  color: #ffffff;
+  text-align: left;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.main-section {
+    padding: 20px; 
+    background-color: black;
+}
+
+label {
+    color: #ffffff; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+input[type="text"],
+input[type="email"] {
+    border: none; 
+    border-bottom: 2px solid #ffffff; 
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+#submit {
+    background-color: orangered;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#submit:hover {
+    transform: scale(1.05); 
+}
+
+footer {
+    font-family: raleway, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  body {
+background-color: black;
+font-family: raleway, sans-serif;
+}
+}</style><style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style></head>
+      
+      
+      
+      
+      
+      <body data-new-gr-c-s-check-loaded="14.1207.0" data-gr-ext-installed="">
+        <header id="header"><img id="header-img" href="https://ibb.co/F3RyM8B" alt="Chaise Berimbau">
+        <nav id="nav-bar">
+          <ul>
+            <li class="nav-link">
+              <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page#Home">Home</a></li>
+            <li class="nav-link">
+              <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/About">About</a></li>
+            <li class="nav-link"><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/Product">
+              Product</a></li>
+            <li class="nav-link">
+              <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/Pricing">Pricing</a></li>
+              <li class="nav-link">
+                <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page#Fun_Fact">Fun Fact</a></li>
+            <li class="nav-link"><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page#Contact">
+              Contact</a></li>
+            <li class="nav-link">
+              <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/Footer">Footer</a></li>
+          </ul>
+        </nav>
+        </header>
+
+        <section class="main-section" id="Home">
+          <header>Home</header>
+          <p>Welcome to the Chaise Berimbau's website. Here you'll get to know about the product, be able to see the product and, if you want to bring to your home settings or other venues a little bit of Sao Salvador da Bahia Brasil, you're in the right place. Enjoy the experience!</p>
+          </section>
+
+          <section class="main-section" id="About">
+            <header>About</header>
+            <p>The Chaise Berimbau is an homage of the Brazilian/American Architect Vitorio Paulo to his native Sao SAlvador da Bahia, Brazil.</p>
+            <p>The piece was designed with the purpose to show to the worldwide audience the strengths of the Brazilian tropicalism.</p>
+            <p>The Architect aimed a rupture with paradigms from the past, inherited from foreigners academic institutions, that influenced the design schools Brazil's wide throughout the XX century, and value his motherland and its people, culture, and history.</p>
+            <p>The Chaise Berimbau dates back to 2002, and was selected among few finalist from all over Brazil to the 2nd Movelpar Design Awards 2025, held in Parana, South of Brazil (at that time, the Movelpar was the biggest and most relevant furniture design and eletronics exhibition in Latin America).</p>
+            <p>In a highly conceptual propose, the product focus on the high-end patronage, targeting the luxury market An ideal piece for people who values the form, aesthetics, functionaity and doesn't neglect exclusivity, originality, boldness and irreverence.</p>
+            </section>
+
+          <section class="main-section" id="Product">
+        <header>Product</header>
+      <p>The Chaise Berimbau is made of a structure of carbon steel, that receives layers of automotive painting and a varnish finish.</p>
+      <p>On the other hand, the seat is crafted in natural junco (also know as vime)</p>
+      <p>The product, a highly conceptual piece of furniture, whilst industrially and economiclly viable, doesn't neglet the functional, ergonomic human factors, and pays attention to the sustainable and eco-efficiency principles.</p><p>
+        </p><p>It suits a wide range of settings, such as outdoor spaces such as balconys and verandas, and indoor spaces, such as lounges and living rooms. The product is also ideal to thematic venues, such as theaters, cultural spaces, and more.</p>
+        <iframe width="560" height="315" src="./zPkp8SJ5TbY.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+            </section>
+          
+          <section class="main-section" id="Pricing">
+        <header>Pricing</header>
+        <p>Our pricing is tailored to each client's unique requirements. We believe in providing transparent and fair pricing that aligns with the value we deliver.</p>
+
+<p>For a personalized quote, don't hesitate to get in touch with us to discuss your specific needs. Our team will work closely to ensure you receive the best possible solution at a competitive price.</p>
+            </section>
+        
+        <section class="main-section" id="Fun_Fact">
+          <header>Fun Fact</header>
+        <p>The Berimbau is a musical instrument used in the Capoeira Martial Art. Capoeira is a slang word first used the ancient slaves, who brought Capoeira to Brazil from Africa. It could be understood as "grass".</p>
+        <p>Historically, Capoeira was first practiced by the ancient slaves from Africa to fight against the slavery colomnial system and, its opressors, aiming freedom.</p><p>
+          </p><p>Capoeira evolved through time, incorporating movements from other martial arts, to be more effective.</p>
+          <p>Currently, Capoeira is known as the genuine, authentic Brazilian sport and is practiced not only throughout all over Brazil, though worldwide.</p>
+            </section>
+
+        <section class="main-section" id="Contact">
+          <header>Contact</header>
+<form method="post" action="https://www.freecodecamp.com/email-submit" id="form">   <fieldset>      <label for="name" id="name-label">Name: <input id="name" type="text" placeholder="Name" required=""></label>
+    <br>
+        <label for="email" id="email-label">Email: <input id="email" name="email" type="email" placeholder="Email" required=""></label>  
+      <input type="submit" value="Submit" id="submit">
+      </fieldset>
+    </form>
+    
+    <footer>
+        Made with <i class="fas fa-heart heart"></i> by Vitorio Paulo for FreeCodeCamp
+    </footer>
+  
+</section></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
