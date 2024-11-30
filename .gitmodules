@@ -1,0 +1,3 @@
+[submodule "chaiseberimbau"]
+    path = chaiseberimbau
+    url = https://github.com/vitoriopaulo/chaiseberimbau.git
