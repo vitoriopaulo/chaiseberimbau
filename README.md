@@ -7,7 +7,7 @@ I am the author of the **Chaise Berimbau**, a piece of furniture designed as a t
 
 ## Considerations
 
-This project is unpretentious and built using **HTML** and **CSS**, following the basics of good practices in **UI/UX Design**.
+This project is unpretentious and built using **HTML** and **CSS**, and **Javascript**, following the basics of good practices in **UI/UX Design**.
 
 ## Being in Touch
 
