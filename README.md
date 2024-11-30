@@ -7,7 +7,7 @@ I am the author of the **Chaise Berimbau**, a piece of furniture designed as a t
 
 ## Considerations
 
-This project is unpretentious and built using **HTML** and **CSS**, and **Javascript**, following the basics of good practices in **UI/UX Design**.
+This project is unpretentious and built using **HTML** and **CSS** with a touch of **Javascript**, following the basics of good practices in **UI/UX Design**.
 
 ## Being in Touch
 
@@ -15,4 +15,4 @@ The best way to get in touch is by opening an [issue](../../issues) here on GitH
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This web app project is licensed under the [MIT License](LICENSE).

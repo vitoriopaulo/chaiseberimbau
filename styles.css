@@ -48,7 +48,7 @@ header {
 }
 
 .chaise-01 {
-    margin: 0 25% 25% 0;
+    margin: auto;
     width: 100%;
     height: auto;
 }
@@ -64,7 +64,7 @@ p {
 }
 
 .chaise-02 {
-    margin: 0 25% 25% 0;
+    margin: auto;
     width: 100%;
     height: auto;
     
@@ -85,9 +85,8 @@ p {
 }
 
 #video {
-    width: 75%;
-    margin-left: 12.5%;
-    margin-right: 12.5%;
+    width: 100%;
+    padding-top: 30px;
 }
 
 label {
