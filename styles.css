@@ -1,6 +1,7 @@
 body {
     background-color: black;
     font-family: 'Raleway', sans-serif;
+    margin: 0;
 }
 
 nav {
@@ -9,6 +10,8 @@ nav {
     left: 0;
     right: 0;
     z-index: 1000;
+    margin-left: 12.5%; /* Left margin */
+    margin-right: 12.5%; /* Right margin */
 }
 
 nav ul {
@@ -34,10 +37,14 @@ nav li a {
 
 nav li:hover a {
     transform: scale(1.1);
+    color: yellow;
 }
 
 header {
     color: orangered;
+    margin-left: 12.5%; /* Left margin */
+    margin-right: 12.5%; /* Right margin */
+    margin-bottom: 48px;
 }
 
 p {
@@ -45,11 +52,23 @@ p {
     text-align: left;
     line-height: 1.5;
     margin-bottom: 20px;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    font-size: 20px;
 }
 
 .main-section {
     padding: 20px; 
     background-color: black;
+    margin-left: 12.5%; /* Left margin */
+    margin-right: 12.5%; /* Right margin */
+}
+
+.header-margin {
+    color: orangered;
+    font-size: 36px;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
 }
 
 label {
@@ -78,31 +97,103 @@ input::placeholder {
     color: #ffffff;
     border: none;
     padding: 15px;
-    width: 100%; 
+    width: 50%; 
     font-size: 16px;
     border-radius: 25px; 
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 #submit:hover {
-    transform: scale(1.01);
+    transform: scale(1.1);
 }
 
 footer {
     font-family: 'Raleway', sans-serif; 
     color: #ffffff;
     text-align: center;
-    margin-top: 20px; 
+    margin-top: 20px;
+    margin-left: 12.5%; /* Left margin */
+    margin-right: 12.5%; /* Right margin */
+    margin-bottom: 20px;
 }
 
-/* Media query for responsive design */
-@media (max-width: 600px) {
-   nav ul {
-       flex-direction: row;
+.menu-toggle {
+    display: none; /* Hide checkbox */
+}
+
+.hamburger {
+    cursor: pointer;
+    float: right;
+    padding: 20px;
+}
+
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px auto; /* Space between lines */
+    transition: all 0.3s ease; /* Transition for animation */
+}
+
+.menu {
+    display: none; /* Hide menu by default */
+    flex-direction: column; /* Stack items vertically */
+    background-color: black; /* Background color for dropdown */
+}
+
+.menu li {
+    margin: 10px 0; /* Vertical space between items */
+}
+
+.menu a {
+    color: #ffffff;          
+    text-decoration: none;   
+    padding: 10px 15px;
+    transition: transform 0.3s ease;
+}
+
+.menu li:hover a {
+    color: yellow;
+    transform: scale(1.1);
+}
+
+/* Show menu when checkbox is checked */
+.menu-toggle:checked + .hamburger + .menu {
+    display: flex; /* Show menu */
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+   .menu {
+       display: flex; /* Show menu inline on larger screens */
+       flex-direction: row; /* Horizontal layout */
    }
 
-   nav li {
-       margin-bottom: 10px; 
+   .hamburger {
+       display: none; /* Hide hamburger icon on larger screens */
    }
+ 
+ .main-section {
+     padding: 20px; 
+ }
+ 
+ #video {
+     width: 100%; /* Set iframe width to match paragraphs */
+ }
+ 
+ header {
+    color: orangered;
+ }
+ 
+ /* Additional styles remain unchanged... */
+ 
 }
+
+
+
+
+
