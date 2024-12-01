@@ -89,6 +89,12 @@ p {
     padding-top: 30px;
 }
 
+.capoeira {
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
 label {
     color: #ffffff; 
     display: block; 
@@ -214,6 +220,12 @@ footer {
  .chaise-01, .chaise-02 {
     width: 100%;
  }
+
+ #submit {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
  
  /* Additional styles remain unchanged... */
  
