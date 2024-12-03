@@ -169,7 +169,7 @@ textarea::placeholder {
 }
 
 .social-icon:hover {
-    background-color: #ccc; /* Darker gray on hover */
+    background-color: orangered; /* Darker gray on hover */
 }
 
 footer {
