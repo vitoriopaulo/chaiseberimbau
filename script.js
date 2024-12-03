@@ -21,5 +21,8 @@ form.addEventListener('submit', function(event) {
     } else {
         // Optional: Additional validation can be added here
         console.log('Form submitted successfully!'); // For debugging purposes
+
+        // Reset the form fields
+        form.reset();
     }
 });
