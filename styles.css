@@ -149,6 +149,29 @@ textarea::placeholder {
     transform: scale(1.1);
 }
 
+social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 20px; /* Space above the icons */
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px; /* Width of the icon */
+    height: 40px; /* Height of the icon */
+    background-color: lightgray; /* Background color */
+    border-radius: 50%; /* Make it round */
+    color: #ffffff; /* Icon color */
+    text-align: center; /* Center icon inside */
+    line-height: 40px; /* Center vertically */
+    margin: 0 10px; /* Space between icons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icon:hover {
+    background-color: #ccc; /* Darker gray on hover */
+}
+
 footer {
     font-family: 'Raleway', sans-serif; 
     color: #ffffff;
