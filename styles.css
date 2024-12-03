@@ -116,6 +116,21 @@ input::placeholder {
     color: #ffffff;
 }
 
+textarea {
+    border: none; 
+    border-bottom: 2px solid #ffffff; 
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    height: 100px; /* Set height for the textarea */
+}
+
+textarea::placeholder {
+    color: #ffffff;
+}
+
 #submit {
     background-color: orangered;
     color: #ffffff;
