@@ -1,6 +1,6 @@
 // Ensure the DOM is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
-    // Close the hamburger menu when a menu item is clicked
+    // Close the hamburger menu when a menu item is clicked (for mobile menu)
     document.querySelectorAll('.nav-link a').forEach(item => {
         item.addEventListener('click', () => {
             const menuToggle = document.getElementById('menu-toggle');
@@ -10,8 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Smooth scrolling functionality
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default jump behavior
+
+            const targetId = this.getAttribute('href'); // Get the target section ID
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                // Scroll smoothly to the target section
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
     // Form validation
-    const form = document.getElementById('form'); // Ensure the ID matches your form
+    const form = document.getElementById('form');
     if (form) {
         form.addEventListener('submit', function (event) {
             const name = document.getElementById('name')?.value.trim();
